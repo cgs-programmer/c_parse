@@ -99,6 +99,9 @@ class Test_c_parse_0(unittest.TestCase):
 		with patch.object(sys,'argv',test_args):
 			self.commands.parseArguments()
 			self.assertEqual(self.commands.get_argsValues(),expected)
+	
+	def tearDown(self):
+		del self.commands
 
 class Test_c_parse_1(unittest.TestCase):
 	def setUp(self):
@@ -108,6 +111,9 @@ class Test_c_parse_1(unittest.TestCase):
 	def test_get_helpTexts(self):
 		expected = False
 		self.assertEqual(self.commands.get_helpTexts(),expected)
+	
+	def tearDown(self):
+		del self.commands
 
 if __name__ == '__main__':
 	unittest.main()
