@@ -19,13 +19,16 @@ class CommandLineParser(object):
 		return 'CommandLineParser object'
 
 	# format the commands into a parseable list
+	# only standard charcters are allowed
+	# whitespaces not allowed
+	# - is also not allowed
 	def formatCommands(self):
 		if (not len(sys.argv) > 1):
 			return False
 		sys.argv.append(' ')
 		command_string = ' '.join(sys.argv[1:])
 		formated_commands = []
-		pattern = re.compile(r'-[a-zA-Z]*\s[a-zA-Z0-9:?\.?\\?/?]*')
+		pattern = re.compile(r'-[a-zA-Z]+ [^ -]*')
 		matches = pattern.finditer(command_string)
 		for i in matches:
 			formated_commands.append(i.group(0).rstrip())
