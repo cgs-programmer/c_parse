@@ -29,8 +29,8 @@ class Test_c_parse_0(unittest.TestCase):
 	#--------------------------------------------------------------------
 	# test formatCommands with command line arguments
 	def test_formatCommands_0(self):
-		test_args = ["test.py","-f","/images/flower.png"]
-		expected = ["-f /images/flower.png"]
+		test_args = ["test.py","-f","/images/flower.png","-p","/images/flowers.png"]
+		expected = ["-f /images/flower.png","-p /images/flowers.png"]
 		with patch.object(sys,'argv',test_args):
 			self.assertEqual(self.commands.formatCommands(),expected)
 
