@@ -28,7 +28,7 @@ class CommandLineParser(object):
 		sys.argv.append(' ')
 		command_string = ' '.join(sys.argv[1:])
 		formated_commands = []
-		pattern = re.compile(r'-[a-zA-Z]+ [^ -]*')
+		pattern = re.compile(r'-[a-zA-Z]+ [^\s-]*')
 		matches = pattern.finditer(command_string)
 		for i in matches:
 			formated_commands.append(i.group(0).rstrip())
