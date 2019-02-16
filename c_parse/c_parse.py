@@ -85,13 +85,13 @@ class CommandLineParser(object):
 
 	# display Help
 	def showHelp(self):
-		print ("Created by Joseph Chhetri. Date 02/02/2019")
 		print ("COMMANDS:-")
 		print("*"*50)
 		for help_item_number in xrange(0,len(self.accepted_arguments_list)):
 			print ("\t{0}     {1}".format(self.accepted_arguments_list[help_item_number],
 					self.help_texts_list[help_item_number]))
 		print ("*"*50)
+		print ("Created by Joseph Chhetri. Date 02/02/2019")
 
 	def __del__(self):
 		return True
